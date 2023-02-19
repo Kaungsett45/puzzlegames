@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>2048</title>
+    <link rel="stylesheet" type="text/css" href="css/game.css">
+  </head>
+
+  <body>
+
+    <div class="above-board">
+      <h1>2048</h1>
+      <div class="new-game"><button>New Game</button></div>
+      <br/><br/>
+      <div class="score"><span>Score: 0</span></div>
+    </div>
+
+    <div class="modal"></div>
+    <figure class="game">
+    </figure>
+
+    <!-- <div class="below-board">
+      <span>How to play: Use your keyboard's arrow keys or your phone/tablet's swipe gestures to slide all of the tiles up, down, left, or right.  If two tiles with the same number collide, they combine and double in value! Keep moving and matching tiles until you hit 2048!</span>
+    </div> -->
+
+
+    <script src="js/jquery-1.11.3.js"></script>
+    <script src="js/jquery.touchSwipe.min.js"></script>
+    <script src="js/game.js"></script>
+    <script src="js/board.js"></script>
+    <script src="js/tile.js"></script>
+
+
+    <script>
+    $(function() {
+      $(".game").swipe( {
+        swipe:function(event, direction, distance, duration, fingerCount, fingerData) {
+        },
+         threshold:0
+      });
+    });
+    </script>
+
+    <script>
+      $(function () {
+        new JSGame.Game($(".game"));
+      });
+    </script>
+  </body>
+</html>
